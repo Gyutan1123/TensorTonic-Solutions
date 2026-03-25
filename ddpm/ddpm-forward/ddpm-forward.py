@@ -16,7 +16,7 @@ def forward_diffusion(
     """
 
     alpha_bar_t = get_alpha_bar(betas)[t]
-    e = np.random.normal(size=x_0.shape) * 100
+    e = np.random.normal(size=x_0.shape)
 
     x_t = np.sqrt(alpha_bar_t)*x_0 + np.sqrt(1-alpha_bar_t)*e
 
