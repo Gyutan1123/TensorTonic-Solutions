@@ -14,7 +14,7 @@ def cosine_alpha_bar_schedule(T: int, s: float = 0.008) -> np.ndarray:
     def f(t):
         return (np.cos((t/T + s) / (1+s) * np.pi / 2)) **2
 
-    t = np.arange(T)
+    t = np.arange(1,T+1)
     alpha_bar = f(t) / f(0)
 
     return alpha_bar
