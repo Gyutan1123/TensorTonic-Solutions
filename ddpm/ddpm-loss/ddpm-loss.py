@@ -15,7 +15,7 @@ def forward_diffusion(
     Sample x_t from q(x_t | x_0).
     """
 
-    alpha_bar_t = get_alpha_bar(betas)[t]
+    alpha_bar_t = get_alpha_bar(betas)[t-1]
     shape = (len(t),) + (1,) * (x_0.ndim-1)
     alpha_bar_t = alpha_bar_t.reshape(shape)
     e = np.random.normal(size=x_0.shape)
